@@ -1,5 +1,5 @@
 module.exports = function towelSort(matrix) {
-    result = []
+    let result = []
 
     for (let i = 0; i < matrix.length; i++){
         if(i % 2 == 0) result.push(matrix[i].toString())
