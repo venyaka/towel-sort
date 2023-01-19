@@ -1,17 +1,16 @@
-module.exports = function towelSort (matrix) {
-  let newArray = [];
-  if(typeof matrix == 'object' && matrix.length > 0) {
-    for(let i=0; i <= matrix.length; i++) {
-      if (i % 2 == 0) {
-        if (typeof matrix[i] == 'object' && matrix[i].length > 0) {
-          newArray = newArray.concat(matrix[i]);
+function towelSort(matrix = []) {
+    let result = []
+
+    for (let i = 0; i < matrix.length; i++){
+        if (i % 2 == 0) 
+        {
+            for (let a = 0; a < matrix[i].length; a++) result.push(matrix[i][a])
         }
-      } else {
-        if (typeof matrix[i] == 'object' && matrix[i].length > 0) {
-          newArray = newArray.concat(matrix[i].reverse());
+        else 
+        {
+            const matrixReverse = matrix[i].reverse()
+            for (let a = 0; a < matrix[i].length; a++) result.push(matrixReverse[a])
         }
-      }
     }
-  }
-  return newArray;
+    return result
 }
