@@ -2,8 +2,8 @@ module.exports = function towelSort(matrix) {
     let result = []
 
     for (let i = 0; i < matrix.length; i++){
-        if(i % 2 == 0) result.push(matrix[i].toString())
-        else result.push(matrix[i].reverse().toString())
+        if(i % 2 == 0) for (let a = 0; a < matrix[i].length; a++) result.push(matrix[i][a])
+        else for (let a = 0; a < matrix[i].length; a++) result.push(matrix[i].reverse()[a])
     }
     return result
 }
